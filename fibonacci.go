@@ -1,12 +1,23 @@
 package piscine
 
-
 func Fibonacci(index int) int {
-	if index<2 && index>=0 {
-		return index
-	} else if index<0{
+	var w int
+	if index < 0 {
 		return -1
-	} else {
-		return Fibonacci(index -1) + Fibonacci(index -2)
 	}
+	if index == 0 {
+		return 0
+	}
+	if index == 1 {
+		return 1
+	}
+	u := 0
+	v := 1
+
+	for i := 2; i <= index; i++ {
+		w = u + v
+		u = v
+		v = w
+	}
+	return v
 }

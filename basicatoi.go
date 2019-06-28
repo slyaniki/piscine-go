@@ -1,17 +1,13 @@
 package piscine
 
-import ( 
-        
-        "strconv"
-
-)
+import "strconv"
 
 func BasicAtoi(s string) int {
-            a := 0
-           intI, err := strconv.Atoi(s)
-	if err == nil{
-		 a = intI 
-	}
+	i, err := strconv.Atoi(s)
 
-return a
+	if err == nil {
+		return i
+	} else {
+		return 0
+	}
 }
